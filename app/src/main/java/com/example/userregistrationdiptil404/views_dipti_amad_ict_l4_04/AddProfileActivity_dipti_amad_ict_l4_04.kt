@@ -1,21 +1,18 @@
-package com.example.userregistrationdiptil404.views
+package com.example.userregistrationdiptil404.views_dipti_amad_ict_l4_04
 
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import com.example.userregistrationdiptil404.ModelsDiptiL404.UserProfileDiptiL4
+import com.example.userregistrationdiptil404.Models_dipti_amad_ict_l4_04.UserProfile_dipti_amad_ict_l4_04
 import com.example.userregistrationdiptil404.R
-import com.example.userregistrationdiptil404.viewmodeldiptil404.UserProfileViewModelDiptiL404
+import com.example.userregistrationdiptil404.viewmodel_dipti_amad_ict_l4_04.UserProfileViewModel_dipti_amad_ict_l4_04
 import java.util.Calendar
 
-class AddProfileActivityDiptiL404 : AppCompatActivity() {
-    private  lateinit var   profileViewModel: UserProfileViewModelDiptiL404
+class AddProfileActivity_dipti_amad_ict_l4_04 : AppCompatActivity() {
+    private  lateinit var   profileViewModel: UserProfileViewModel_dipti_amad_ict_l4_04
     private  lateinit var  nameTxt: EditText
     private  lateinit var  emailTxt: EditText
     private  lateinit var  dobTxt: EditText
@@ -24,9 +21,9 @@ class AddProfileActivityDiptiL404 : AppCompatActivity() {
     private  lateinit var  saveBtn: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_profile_dipti_l404)
+        setContentView(R.layout.activity_add_profile_dipti_amad_ict_l4_04)
 
-        profileViewModel = ViewModelProvider(this).get(UserProfileViewModelDiptiL404::class.java)
+        profileViewModel = ViewModelProvider(this).get(UserProfileViewModel_dipti_amad_ict_l4_04::class.java)
 
         nameTxt = findViewById(R.id.profileNameEt)
         emailTxt = findViewById(R.id.emailEt)
@@ -46,7 +43,7 @@ class AddProfileActivityDiptiL404 : AppCompatActivity() {
             val dob = dobTxt.text.toString().trim()
             val district = districtTxt.text.toString().trim()
             val mobile = mobileTxt.text.toString().trim()
-            val userProfile = UserProfileDiptiL4(name = name, email=email, dob=dob, district=district, mobile=mobile)
+            val userProfile = UserProfile_dipti_amad_ict_l4_04(name = name, email=email, dob=dob, district=district, mobile=mobile)
             profileViewModel.insertUserProfile(userProfile)
             finish()
         }

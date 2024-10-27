@@ -6,7 +6,7 @@
     android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityDitpiL404">
+    tools:context=".MainActivity_dipti_amad_ict_l4_04">
 
     <TextView
         android:id="@+id/welcomeTxt"

@@ -1,22 +1,19 @@
-package com.example.userregistrationdiptil404.views
+package com.example.userregistrationdiptil404.views_dipti_amad_ict_l4_04
 
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import com.example.userregistrationdiptil404.ModelsDiptiL404.UserProfileDiptiL4
+import com.example.userregistrationdiptil404.Models_dipti_amad_ict_l4_04.UserProfile_dipti_amad_ict_l4_04
 import com.example.userregistrationdiptil404.R
-import com.example.userregistrationdiptil404.viewmodeldiptil404.UserProfileViewModelDiptiL404
+import com.example.userregistrationdiptil404.viewmodel_dipti_amad_ict_l4_04.UserProfileViewModel_dipti_amad_ict_l4_04
 import java.util.Calendar
 
-class UpdateProfileActivityDiptiL404 : AppCompatActivity() {
-    private lateinit var userProfile: UserProfileDiptiL4
-    private lateinit var profileViewModel: UserProfileViewModelDiptiL404
+class UpdateProfileActivity_dipti_amad_ict_l4_04 : AppCompatActivity() {
+    private lateinit var userProfile: UserProfile_dipti_amad_ict_l4_04
+    private lateinit var profileViewModel: UserProfileViewModel_dipti_amad_ict_l4_04
 
     private lateinit var NameEt: EditText
     private lateinit var emailEt: EditText
@@ -28,10 +25,10 @@ class UpdateProfileActivityDiptiL404 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_update_profile_dipti_l404)
+        setContentView(R.layout.activity_update_profile_dipti_amad_ict_l4_04)
 
-        profileViewModel = ViewModelProvider(this).get(UserProfileViewModelDiptiL404::class.java)
-        userProfile = intent.getSerializableExtra("USER_PROFILE") as UserProfileDiptiL4
+        profileViewModel = ViewModelProvider(this).get(UserProfileViewModel_dipti_amad_ict_l4_04::class.java)
+        userProfile = intent.getSerializableExtra("USER_PROFILE") as UserProfile_dipti_amad_ict_l4_04
 
         NameEt = findViewById(R.id.NameEt)
         emailEt = findViewById(R.id.emailEt)
@@ -79,7 +76,7 @@ class UpdateProfileActivityDiptiL404 : AppCompatActivity() {
         val district = districtEt.text.toString().trim()
         val mobile = mobileEt.text.toString().trim()
 
-        val updateUserProfile = UserProfileDiptiL4(id= userProfile.id,name = name, email=email, dob=dob, district=district, mobile=mobile)
+        val updateUserProfile = UserProfile_dipti_amad_ict_l4_04(id= userProfile.id,name = name, email=email, dob=dob, district=district, mobile=mobile)
         profileViewModel.updateUserProfile(updateUserProfile)
         finish()
     }

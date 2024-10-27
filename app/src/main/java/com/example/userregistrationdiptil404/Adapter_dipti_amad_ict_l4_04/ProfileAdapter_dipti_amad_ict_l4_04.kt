@@ -1,4 +1,4 @@
-package com.example.userregistrationdiptil404.AdapterDiptiL404
+package com.example.userregistrationdiptil404.Adapter_dipti_amad_ict_l4_04
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,16 +8,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.userregistrationdiptil404.ModelsDiptiL404.UserProfileDiptiL4
+import com.example.userregistrationdiptil404.Models_dipti_amad_ict_l4_04.UserProfile_dipti_amad_ict_l4_04
 import com.example.userregistrationdiptil404.R
 
-class ProfileAdapterDiptil404 (): ListAdapter<UserProfileDiptiL4, ProfileAdapterDiptil404.ProfileViewHolder>(DiffCallback()) {
-    private lateinit var  OnItemClickListener:((UserProfileDiptiL4)->Unit)
-    private lateinit var  OnDeleteClickListener:((UserProfileDiptiL4)->Unit)
-    private lateinit var  OnUpdateClickListener:((UserProfileDiptiL4)->Unit)
+class ProfileAdapterDiptil404 (): ListAdapter<UserProfile_dipti_amad_ict_l4_04, ProfileAdapterDiptil404.ProfileViewHolder>(DiffCallback()) {
+    private lateinit var  OnItemClickListener:((UserProfile_dipti_amad_ict_l4_04)->Unit)
+    private lateinit var  OnDeleteClickListener:((UserProfile_dipti_amad_ict_l4_04)->Unit)
+    private lateinit var  OnUpdateClickListener:((UserProfile_dipti_amad_ict_l4_04)->Unit)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfileViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.profile_list_layoutdiptil404, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.profile_list_layout_dipti_amad_ict_l4_04, parent, false)
         return ProfileViewHolder(itemView)
     }
     override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
@@ -25,14 +25,14 @@ class ProfileAdapterDiptil404 (): ListAdapter<UserProfileDiptiL4, ProfileAdapter
         holder.bind(currentItem)
     }
 
-    fun setOnItemClickListener(listener: (UserProfileDiptiL4) -> Unit) {
+    fun setOnItemClickListener(listener: (UserProfile_dipti_amad_ict_l4_04) -> Unit) {
 
         OnItemClickListener = listener
     }
-    fun setOnDeleteClickListener(listener: (UserProfileDiptiL4) -> Unit) {
+    fun setOnDeleteClickListener(listener: (UserProfile_dipti_amad_ict_l4_04) -> Unit) {
         OnDeleteClickListener = listener
     }
-    fun setOnUpdateClickListener(listener: (UserProfileDiptiL4) -> Unit) {
+    fun setOnUpdateClickListener(listener: (UserProfile_dipti_amad_ict_l4_04) -> Unit) {
         OnUpdateClickListener = listener
     }
 
@@ -71,7 +71,7 @@ class ProfileAdapterDiptil404 (): ListAdapter<UserProfileDiptiL4, ProfileAdapter
 
         }
 
-        fun bind(userProfile: UserProfileDiptiL4) {
+        fun bind(userProfile: UserProfile_dipti_amad_ict_l4_04) {
             profileName.text = userProfile.name
             profileEmail.text = userProfile.email
             profileDob.text = userProfile.dob
@@ -82,12 +82,12 @@ class ProfileAdapterDiptil404 (): ListAdapter<UserProfileDiptiL4, ProfileAdapter
 
     }
 }
-class  DiffCallback : DiffUtil.ItemCallback<UserProfileDiptiL4>(){
-    override fun areItemsTheSame(oldItem: UserProfileDiptiL4, newItem: UserProfileDiptiL4): Boolean {
+class  DiffCallback : DiffUtil.ItemCallback<UserProfile_dipti_amad_ict_l4_04>(){
+    override fun areItemsTheSame(oldItem: UserProfile_dipti_amad_ict_l4_04, newItem: UserProfile_dipti_amad_ict_l4_04): Boolean {
         return  oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: UserProfileDiptiL4, newItem: UserProfileDiptiL4): Boolean {
+    override fun areContentsTheSame(oldItem: UserProfile_dipti_amad_ict_l4_04, newItem: UserProfile_dipti_amad_ict_l4_04): Boolean {
         return  oldItem == newItem
 
     }

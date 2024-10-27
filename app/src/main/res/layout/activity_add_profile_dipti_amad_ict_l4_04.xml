@@ -5,25 +5,30 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="30dp"
+    android:padding="5dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
     app:cardMaxElevation="10dp"
-    tools:context=".views.UpdateProfileActivityDiptiL404">
+    android:layout_margin="30dp"
+    tools:context=".views_dipti_amad_ict_l4_04.AddProfileActivity_dipti_amad_ict_l4_04">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/NameEt"
+            android:id="@+id/profileNameEt"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:hint="Enter Your Profile Name"
-            android:textColor="@color/black"
             android:background="@drawable/addtext"
+            android:textColor="#009688"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,24 +39,25 @@
             android:id="@+id/emailEt"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/addtext"
+            android:layout_marginTop="20dp"
             android:hint="Enter Your mail Address"
-            android:textColor="@color/black"
+            android:background="@drawable/addtext"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/NameEt"
-            app:layout_constraintStart_toStartOf="@id/NameEt"
-            app:layout_constraintTop_toBottomOf="@id/NameEt"
+            app:layout_constraintEnd_toEndOf="@id/profileNameEt"
+            app:layout_constraintStart_toStartOf="@id/profileNameEt"
+            app:layout_constraintTop_toBottomOf="@id/profileNameEt"
             app:layout_goneMarginTop="20dp" />
+
 
         <EditText
             android:id="@+id/dobEt"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
+            android:focusable="false"
+            android:inputType="none"
             android:hint="Enter Your Date of Birth"
-            android:textColor="@color/black"
             android:background="@drawable/addtext"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -64,9 +70,8 @@
             android:id="@+id/districtEt"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:hint="Enter Your District"
-            android:textColor="@color/black"
             android:background="@drawable/addtext"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -79,11 +84,10 @@
             android:id="@+id/mobileEt"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:hint="Enter Your Mobile Number"
-            android:textColor="@color/black"
-            android:textSize="18sp"
             android:background="@drawable/addtext"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/districtEt"
             app:layout_constraintStart_toStartOf="@id/districtEt"
@@ -91,12 +95,12 @@
             app:layout_goneMarginTop="20dp" />
 
         <Button
-            android:id="@+id/updateBtn"
+            android:id="@+id/addBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="88dp"
             android:backgroundTint="#009688"
-            android:text="Update"
+            android:text="Add "
             android:textColor="#C2F5F5"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -108,5 +112,9 @@
             app:strokeWidth="2dp" />
 
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.cardview.widget.CardView>
