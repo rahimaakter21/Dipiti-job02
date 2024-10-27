@@ -1,0 +1,95 @@
+package com.example.userregistrationdiptil404.AdapterDiptiL404
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.userregistrationdiptil404.ModelsDiptiL404.UserProfileDiptiL4
+import com.example.userregistrationdiptil404.R
+
+class ProfileAdapterDiptil404 (): ListAdapter<UserProfileDiptiL4, ProfileAdapterDiptil404.ProfileViewHolder>(DiffCallback()) {
+    private lateinit var  OnItemClickListener:((UserProfileDiptiL4)->Unit)
+    private lateinit var  OnDeleteClickListener:((UserProfileDiptiL4)->Unit)
+    private lateinit var  OnUpdateClickListener:((UserProfileDiptiL4)->Unit)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfileViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.profile_list_layoutdiptil404, parent, false)
+        return ProfileViewHolder(itemView)
+    }
+    override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
+        val currentItem = getItem(position)
+        holder.bind(currentItem)
+    }
+
+    fun setOnItemClickListener(listener: (UserProfileDiptiL4) -> Unit) {
+
+        OnItemClickListener = listener
+    }
+    fun setOnDeleteClickListener(listener: (UserProfileDiptiL4) -> Unit) {
+        OnDeleteClickListener = listener
+    }
+    fun setOnUpdateClickListener(listener: (UserProfileDiptiL4) -> Unit) {
+        OnUpdateClickListener = listener
+    }
+
+    inner class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        private val profileName: TextView = itemView.findViewById(R.id.userNameTxt)
+        private val profileEmail: TextView = itemView.findViewById(R.id.userEmailTxt)
+        private val profileDob: TextView = itemView.findViewById(R.id.DobTxt)
+        private val profileDistrict: TextView = itemView.findViewById(R.id.DistrictTxt)
+        private val profileMobile: TextView = itemView.findViewById(R.id.MobileTxt)
+        private val updateBtn: ImageButton = itemView.findViewById(R.id.updateBtn)
+        private val deleteBtn: ImageButton = itemView.findViewById(R.id.deleteBtn)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val profile = getItem(position)
+                    OnItemClickListener?.invoke(profile)
+                }
+            }
+            deleteBtn.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val profile = getItem(position)
+                    OnDeleteClickListener?.invoke(profile)
+                }
+            }
+            updateBtn.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val profile = getItem(position)
+                    OnUpdateClickListener?.invoke(profile)
+                }
+            }
+
+        }
+
+        fun bind(userProfile: UserProfileDiptiL4) {
+            profileName.text = userProfile.name
+            profileEmail.text = userProfile.email
+            profileDob.text = userProfile.dob
+            profileDistrict.text = userProfile.district
+            profileMobile.text = userProfile.mobile
+
+        }
+
+    }
+}
+class  DiffCallback : DiffUtil.ItemCallback<UserProfileDiptiL4>(){
+    override fun areItemsTheSame(oldItem: UserProfileDiptiL4, newItem: UserProfileDiptiL4): Boolean {
+        return  oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: UserProfileDiptiL4, newItem: UserProfileDiptiL4): Boolean {
+        return  oldItem == newItem
+
+    }
+
+}
